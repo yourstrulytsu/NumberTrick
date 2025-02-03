@@ -2,8 +2,12 @@
         // 2/2/2025
         
         // Prompt 
-        let userNumber = parseInt(prompt("Choose any whole number:"));
-        
+        let userNumber = prompt("Choose any whole number:");
+        if (userNumber === null || userNumber.trim() === "" || isNaN(userNumber) || !Number.isInteger(Number(userNumber))) {
+            alert("Invalid input! Please enter a whole number.");
+        } else {
+            userNumber = parseInt(userNumber); // Convert valid input to integer
+                
         // The secret to getting 7 always
         let step1 = userNumber + 9; // Add 9
         let step2 = step1 * 2; // Multiply by 2
@@ -27,4 +31,4 @@
         
         // Display the final
         document.write("<h1>Lucky</h1>");
-        document.write("<h2>" + finalResult + "</h2>");
+        document.write("<h2>" + finalResult + "</h2>")}
